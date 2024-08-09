@@ -1,4 +1,4 @@
-{{- if (.Values.provider).aws }}
+{{- if eq .Values.provider "aws" }}
 apiVersion: operator.cluster.x-k8s.io/v1alpha2
 kind: InfrastructureProvider
 metadata:
@@ -16,5 +16,7 @@ spec:
       bindAddress: ":8181"
     syncPeriod: 10m0s
     featureGates:
-      MachinePool: {{ .Values.global.capa.autoScaler }}
+    {{- if .Values.global.capa.autoScaler }}
+      MachinePool: {{ .Values.global.clusterName }}-mp-0
+    {{- end }}
 {{- end }}

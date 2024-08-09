@@ -1,4 +1,4 @@
-{{- if (.Values.global.capa).autoScaler }}
+{{- if .Values.global.capa.autoScaler }}
 apiVersion: bootstrap.cluster.x-k8s.io/v1beta1
 kind: KubeadmConfig
 metadata:

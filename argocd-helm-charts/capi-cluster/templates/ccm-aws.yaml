@@ -1,4 +1,4 @@
-{{- if (.Values.provider).aws }}
+{{- if eq .Values.provider "aws" }}
 apiVersion: addons.cluster.x-k8s.io/v1alpha1
 kind: HelmChartProxy
 metadata:
@@ -20,7 +20,7 @@ spec:
   valuesTemplate: |
     namespace: kube-system
     image:
-      tag: v1.30.0
+      tag: v1.28.3
     args:
       - --v=2
       - --cloud-provider=aws

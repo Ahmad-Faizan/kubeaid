@@ -1,10 +1,27 @@
+global:
+  capa:
+    version: v2.5.0
+    autoScaler: true
+region: us-east-1
+sshKeyName: kubeaid-ssh-key
+bastion:
+  enabled: true
+vpc:
+  cidrBlock: 10.244.0.0/20
+pods:
+  cidrBlock: 10.244.0.0/16
+controlPlane:
+  region: us-east-1
+  replicas: 1
+  instanceType: t3a.large
+  ami:
+    id: ami-03cd26c84ae9a587c
+  loadBalancerType: network
+  publicIP: false
 workerNodes:
   maxSize: 3
   minSize: 1
+  instanceType: t3a.large
   ami:
     id: ami-03cd26c84ae9a587c
   publicIP: false
-controlPlane:
-  ami:
-    id: ami-03cd26c84ae9a587c
-  publicIP: true

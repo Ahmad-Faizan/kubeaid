@@ -9,13 +9,9 @@ global:
     repo: https://github.com/Obmondo/kubeaid.git
   kubeaidConfig:
     repo: https://github.com/Obmondo/kubeaid-config.git
-  capz:
-    version: v1.16.0
-
+  capa:
+    version: v2.5.0
+    autoScaler: true
 
 selfManged: false
-
-provider:
-  hetzner: false
-  aws: false
-  azure: true
+provider: aws

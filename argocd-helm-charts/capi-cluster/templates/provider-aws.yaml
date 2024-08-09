@@ -17,6 +17,6 @@ spec:
     syncPeriod: 10m0s
     featureGates:
     {{- if .Values.global.capa.autoScaler }}
-      MachinePool: {{ .Values.global.clusterName }}-mp-0
+      MachinePool: {{ .Values.global.capa.autoScaler }}
     {{- end }}
 {{- end }}
